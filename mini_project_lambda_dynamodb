@@ -1,0 +1,29 @@
+$ cd ..   
+(.venv) vishwanathr ~/professional/aws_sdk  $ cd mini_project_lambda_dynamodb 
+(.venv) vishwanathr ~/professional/aws_sdk/mini_project_lambda_dynamodb  $ ls
+deploy.py               lambda_function.py
+(.venv) vishwanathr ~/professional/aws_sdk/mini_project_lambda_dynamodb  $ python deploy.py 
+Table exists.
+Lambda Created.
+
+ URL: https://veigvtsi1d.execute-api.us-east-1.amazonaws.com/prod/users
+(.venv) vishwanathr ~/professional/aws_sdk/mini_project_lambda_dynamodb  $ $myUrl = "https://veigvtsi1d.execute-api.us-east-1.amazonaws.com/prod/users"
+zsh: command not found: =
+(.venv) vishwanathr ~/professional/aws_sdk/mini_project_lambda_dynamodb  $ $myUrl = "https://veigvtsi1d.execute-api.us-east-1.amazonaws.com/prod/users"
+zsh: command not found: =
+(.venv) vishwanathr ~/professional/aws_sdk/mini_project_lambda_dynamodb  $ $myUrl="https://veigvtsi1d.execute-api.us-east-1.amazonaws.com/prod/users" 
+zsh: https://veigvtsi1d.execute-api.us-east-1.amazonaws.com/prod/users not found
+(.venv) vishwanathr ~/professional/aws_sdk/mini_project_lambda_dynamodb  $ export myUrl="https://veigvtsi1d.execute-api.us-east-1.amazonaws.com/prod/users"
+(.venv) vishwanathr ~/professional/aws_sdk/mini_project_lambda_dynamodb  $ print $myUrl
+https://veigvtsi1d.execute-api.us-east-1.amazonaws.com/prod/users
+(.venv) vishwanathr ~/professional/aws_sdk/mini_project_lambda_dynamodb  $ export body='{"id":"1234","name":"Ramesh","email":"vish@gmail.com"}'
+(.venv) vishwanathr ~/professional/aws_sdk/mini_project_lambda_dynamodb  $ print $body 
+{"id":"1234","name":"Ramesh","email":"vish@gmail.com"}
+(.venv) vishwanathr ~/professional/aws_sdk/mini_project_lambda_dynamodb  $ Invike-RestMethod -Uri $myUrl -Method Post -Body 
+$body
+zsh: command not found: Invike-RestMethod
+(.venv) vishwanathr ~/professional/aws_sdk/mini_project_lambda_dynamodb  $ curl -sS -X POST "$myUrl" -H 'Content-Type: application/json' -d "$body"
+{"message": "User Created", "user": {"id": "1234", "name": "Ramesh", "email": "vish@gmail.com"}}%                           
+(.venv) vishwanathr ~/professional/aws_sdk/mini_project_lambda_dynamodb  $ curl -sS -X GET "$myUrl?id=1234"                
+{"email": "vish@gmail.com", "id": "1234", "name": "Ramesh"}%  
+(.venv) vishwanathr ~/professional/aws_sdk/mini_project_lambda_dynamodb  $ 
